@@ -116,6 +116,9 @@ prevEncFormationInput.addEventListener('change', () => {
 prevEncNumberInput.addEventListener('change', () => {
     CalculateFormation();
 });
+offsetInput.addEventListener('change', () => {
+    CalculateFormation();
+});
 mapIdInput.addEventListener('change', () => {
     PopulateEncounterIds(formations, encounters, mapIdInput.value);
     CalculateFormation();
