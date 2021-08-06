@@ -44,9 +44,6 @@ function NextEncFormation(index, previousEncounter = -1) {
     console.log(`offset value: ${offsetValue}`);
     let possibleFormations = (mapId in formations) ? formations[mapId] : null;
     let previousEncs = [false, false, false, false];
-    console.log(`rng: ${rng}`);
-    console.log(`rng[index]: ${rng[index]}`);
-    console.log(`parseInt(rng[index]) + parseInt(offsetValue)): ${parseInt(rng[index]) + parseInt(offsetValue)}`);
 
     if (possibleFormations !== null) {
         previousEncs[previousEncounter] = true;
