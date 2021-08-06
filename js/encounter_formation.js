@@ -46,13 +46,13 @@ function NextEncFormation(index, previousEncounter = -1) {
     let previousEncs = [false, false, false, false];
     console.log(`rng: ${rng}`);
     console.log(`rng[index]: ${rng[index]}`);
-    console.log(`(rng[index] + offsetValue): ${rng[index] + offsetValue}`);
+    console.log(`parseInt(rng[index]) + parseInt(offsetValue)): ${parseInt(rng[index]) + parseInt(offsetValue)}`);
 
     if (possibleFormations !== null) {
         previousEncs[previousEncounter] = true;
     }
 
-    if ( (rng[index] + offsetValue) < 128 && !previousEncs[0]) {
+    if ( (parseInt(rng[index]) + parseInt(offsetValue)) < 128 && !previousEncs[0]) {
         resultFormation = "1" + ((possibleFormations) ? ": " + encounters[possibleFormations[0]] : "");
         currentFormation = 0;
     } else if ( (rng[index]  + offsetValue) < 192 && !previousEncs[1]) {
