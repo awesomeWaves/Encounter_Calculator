@@ -52,13 +52,13 @@ function NextEncFormation(index, previousEncounter = -1) {
         previousEncs[previousEncounter] = true;
     }
 
-    if ( (parseInt(rng[index]) + parseInt(offsetValue)) < 128 && !previousEncs[0]) {
+    if ( (parseInt(rng[index]) + parseInt(offsetValue) ) < 128 && !previousEncs[0]) {
         resultFormation = "1" + ((possibleFormations) ? ": " + encounters[possibleFormations[0]] : "");
         currentFormation = 0;
-    } else if ( (rng[index]  + offsetValue) < 192 && !previousEncs[1]) {
+    } else if ( (parseInt(rng[index]) + parseInt(offsetValue) ) < 192 && !previousEncs[1]) {
         resultFormation = "2" + ((possibleFormations) ? ": " + encounters[possibleFormations[1]] : "");
         currentFormation = 1;
-    } else if ( (rng[index] + offsetValue) < 240 && !previousEncs[2]) {
+    } else if ( (parseInt(rng[index]) + parseInt(offsetValue) ) < 240 && !previousEncs[2]) {
         resultFormation = "3" + ((possibleFormations) ? ": " + encounters[possibleFormations[2]] : "");
         currentFormation = 2;
     } else {
