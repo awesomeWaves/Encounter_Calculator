@@ -40,6 +40,7 @@ function NextEncFormation(index, previousEncounter = -1) {
     // If map id was provided, return enemy encounter formation.
     // If not, then just return the formation number.
     let mapId = mapIdInput.value;
+    let offsetValue = offsetInput.value;
     let possibleFormations = (mapId in formations) ? formations[mapId] : null;
     let previousEncs = [false, false, false, false];
 
@@ -47,13 +48,13 @@ function NextEncFormation(index, previousEncounter = -1) {
         previousEncs[previousEncounter] = true;
     }
 
-    if ( (rng[index] + offsetInput) < 128 && !previousEncs[0]) {
+    if ( (rng[index] + offsetValue) < 128 && !previousEncs[0]) {
         resultFormation = "1" + ((possibleFormations) ? ": " + encounters[possibleFormations[0]] : "");
         currentFormation = 0;
-    } else if ( (rng[index]  + offsetInput) < 192 && !previousEncs[1]) {
+    } else if ( (rng[index]  + offsetValue) < 192 && !previousEncs[1]) {
         resultFormation = "2" + ((possibleFormations) ? ": " + encounters[possibleFormations[1]] : "");
         currentFormation = 1;
-    } else if ( (rng[index] + offsetInput) < 240 && !previousEncs[2]) {
+    } else if ( (rng[index] + offsetValue) < 240 && !previousEncs[2]) {
         resultFormation = "3" + ((possibleFormations) ? ": " + encounters[possibleFormations[2]] : "");
         currentFormation = 2;
     } else {
