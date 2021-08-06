@@ -47,7 +47,6 @@ function NextEncFormation(index, previousEncounter = -1) {
     console.log(`rng: ${rng}`);
     console.log(`rng[index]: ${rng[index]}`);
     console.log(`parseInt(rng[index]) + parseInt(offsetValue)): ${parseInt(rng[index]) + parseInt(offsetValue)}`);
-    console.log(( (parseInt(rng[index]) + parseInt(offsetValue)) % 255 ));
 
     if (possibleFormations !== null) {
         previousEncs[previousEncounter] = true;
